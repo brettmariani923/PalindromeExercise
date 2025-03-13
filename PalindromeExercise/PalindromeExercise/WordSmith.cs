@@ -1,36 +1,27 @@
-﻿using PalindromeExercise;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.ExceptionServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace PalindromeExercise
+namespace PalindromeExercise;
+
+public class WordSmith
 {
-    public class WordSmith
+    public bool IsAPalindrome(string word)
     {
-        public static bool IsAPalindrome(string word)
+
+        int start = 0;
+        int end = word.Length - 1;
+
+        while (start < end)
         {
-         
-            int start = 0; 
-            int end = word.Length - 1; 
-
-            while (start < end) 
+            if (word[start] != word[end])
             {
-                if (word[start] != word[end]) 
-                {
-                    return false; 
-                }
-
-                start++; 
-                end--; 
+                return false;
             }
 
-            return true; 
+            start++;
+            end--;
         }
 
+        return true;
     }
 
 }
-
